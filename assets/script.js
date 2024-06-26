@@ -1,10 +1,15 @@
 const input_id = document.getElementById("input_search");
     const items = document.getElementById("items_list");
 
-    input_id.addEventListener("input",(event)=>{
-        console.log(event.target.value);
-        UI_List();
-    })
+    input_id.addEventListener("input", (event) => {
+    const searchValue = event.target.value.toLowerCase();
+
+    filter_products = products.filter(eve =>
+        eve.title.toLowerCase().includes(searchValue)
+    );
+
+    UI_List();
+});
 
     let products = null;
     let filter_products = null;
@@ -20,6 +25,7 @@ const input_id = document.getElementById("input_search");
 
     function UI_List() {
         const productFragment = document.createDocumentFragment();
+
 
         for (let i = 0; i < filter_products.length; i++) {
             // console.log(filter_products.length);
