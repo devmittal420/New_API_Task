@@ -36,8 +36,6 @@ const input_id = document.getElementById("input_search");
             const li_Elem = document.createElement("li");
             li_Elem.className = "card";
 
-            
-
             const thumbnail_Elem = document.createElement("img");
             const title_Elem = document.createElement("p");
 
