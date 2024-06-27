@@ -1,5 +1,5 @@
 const input_id = document.getElementById("input_search");
-    const items = document.getElementById("items_list");
+const items = document.getElementById("items_list");
 
     input_id.addEventListener("input", (event) => {
     const searchValue = event.target.value.toLowerCase();
@@ -26,7 +26,6 @@ const input_id = document.getElementById("input_search");
     function UI_List() {
         const productFragment = document.createDocumentFragment();
 
-
         for (let i = 0; i < filter_products.length; i++) {
             // console.log(filter_products.length);
             const product = filter_products[i];
@@ -38,7 +37,7 @@ const input_id = document.getElementById("input_search");
 
             const thumbnail_Elem = document.createElement("img");
             const title_Elem = document.createElement("p");
-
+            
             thumbnail_Elem.src = thumbnailUrl;
             thumbnail_Elem.addEventListener("click",()=>{
                 window.open(url);
@@ -52,5 +51,6 @@ const input_id = document.getElementById("input_search");
             li_Elem.appendChild(title_Elem);
             productFragment.appendChild(li_Elem);
         }
+        items.innerHTML = "";
         items.appendChild(productFragment);
     }
